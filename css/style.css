@@ -1,0 +1,188 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Montserrat", sans-serif;
+  overflow: hidden;
+}
+
+header {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  width: 100%;
+  height: auto;
+  position: relative;
+  background-color: #621132;
+  height: 64px;
+  padding: 0 1em;
+}
+
+nav {
+  display: none;
+  position: absolute;
+  justify-content: center;
+  top: 64px;
+}
+
+nav ul {
+  padding: 5px 0;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgb(0 0 0 / 20%), 0 8px 10px 1px rgb(0 0 0 / 14%),
+    0 3px 14px 2px rgb(0 0 0 / 12%);
+}
+
+li {
+  list-style-type: none;
+  width: 180px;
+  background: #fff;
+}
+
+li a {
+  display: block;
+  width: 100%;
+  padding: 10px 15px;
+  text-decoration: none;
+  color: #000;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  background: #fff;
+}
+
+ul li > a:hover,
+ul ul li:hover > a {
+  background: rgba(224, 224, 224, 0.315);
+}
+
+li ul {
+  visibility: collapse;
+  background: #fff;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 1s ease;
+}
+
+ul > li {
+  position: relative;
+}
+
+ul li ul {
+  position: absolute;
+  z-index: 2;
+}
+
+ul li:hover > ul {
+  visibility: visible;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+.btn__menu--show {
+  display: inline-block;
+  color: #fff;
+  font-size: 0.9em;
+  border: none;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+.navegation--show {
+  display: block;
+  position: absolute;
+  top: 2.5em;
+}
+
+ul li:hover > ul {
+  visibility: visible;
+  right: 25%;
+  top: 0;
+  opacity: 1;
+  transition: opacity 0.4s ease;
+}
+
+
+
+@media screen and (min-width: 550px) {
+  ul li:hover > ul {
+    display: block;
+    right: 80%;
+    top: 0;
+  }
+}
+
+@media screen and (min-width: 970px) {
+  .btn__menu--show {
+    display: none;
+  }
+
+  header {
+    position: unset;
+    justify-content: center;
+  }
+
+  nav {
+    display: block;
+    position: unset;
+    width: auto;
+  }
+
+  nav > ul {
+    box-shadow: none;
+  }
+
+  ul {
+    display: flex;
+  }
+
+  li {
+    width: auto;
+    background: none;
+  }
+
+  li a {
+    width: auto;
+    padding: 10px 8px;
+    color: #fff;
+    background: none;
+  }
+
+  li ul {
+    background: #fff;
+  }
+
+  li ul li {
+    width: 200px;
+    position: relative;
+  }
+
+  nav li a:hover {
+    background: rgba(112, 23, 60, 0.74);
+  }
+
+  ul li li > a:hover {
+    background: rgba(224, 224, 224, 0.315);
+  }
+
+  li ul li > a {
+    color: #000;
+  }
+
+  ul li:hover > ul {
+    display: block;
+    right: unset;
+    top: unset;
+  }
+
+  li li:hover > ul {
+    display: block;
+    right: unset;
+    left: 100%;
+    top: 0;
+  }
+}
